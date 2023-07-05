@@ -15,7 +15,7 @@ export default function Button(props) {
   };
 
   if (props.isDisabled || props.isLoading) {
-    if (props.isDisabled) className.push('disable');
+    if (props.isDisabled) className.push('disabled');
     return (
       <span className={className.join(' ')} style={props.style}>
         {props.isLoading ? (
@@ -56,17 +56,17 @@ export default function Button(props) {
   }
 
   return (
-    <Button
+    <button
       className={className.join(' ')}
       style={props.style}
       onClick={onClick}>
       {props.children}
-    </Button>
+    </button>
   );
 }
 
-Button.prototype = {
-  type: propTypes.oneOf(['Button', 'link']),
+Button.propTypes = {
+  type: propTypes.oneOf(['button', 'link']),
   onClick: propTypes.func,
   target: propTypes.string,
   href: propTypes.string,
