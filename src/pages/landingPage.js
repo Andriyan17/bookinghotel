@@ -5,7 +5,7 @@ export default class LandingPage extends Component {
   render() {
     return (
       <>
-        <Header {...this.props}></Header>
+        <Header {...this.props} location={window.location}></Header>
       </>
     );
   }
