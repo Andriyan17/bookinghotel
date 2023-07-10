@@ -8,7 +8,7 @@ export default class LandingPage extends Component {
     return (
       <>
         <Header {...this.props} location={window.location}></Header>
-        <Hero data={landingPage.Hero} />
+        <Hero data={landingPage.hero} />
       </>
     );
   }

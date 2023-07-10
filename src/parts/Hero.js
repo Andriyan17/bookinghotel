@@ -8,15 +8,11 @@ import Button from 'elements/Button';
 
 export default function Hero(props) {
   function showMostPicked() {
-    if (props.refMostPicked && props.refMostPicked.current) {
-      window.scrollTo({
-        top: props.refMostPicked.current.offsetTop - 30,
-        behavior: 'smooth',
-      });
-    }
+    window.scrollTo({
+      top: props.refMostPicked.current.offsetTop - 30,
+      behavior: 'smooth',
+    });
   }
-
-  const { travelers } = props.data?.hero || {}; // Mengakses nilai 'travelers' dengan aman
 
   return (
     <section className="container pt-4">
@@ -38,12 +34,8 @@ export default function Hero(props) {
           </Button>
           <div className="row mt-5">
             <div className="col-auto">
-              {travelers && (
-                <>
-                  <img src={icCities.default} alt={`${travelers} Travelers`} />
-                  <h6 className="mt-3">{travelers}</h6>
-                </>
-              )}
+              <img src={icCities} alt={`${props.data.travelers} Travelers`} />
+              <h6 className="mt-3">{props.data.travelers}</h6>
             </div>
           </div>
         </div>
