@@ -16,9 +16,15 @@
   user-select: none;
   background-color: transparent;
   border: $btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  min-height: 50px;
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $btn-line-height,
+    4px
+  );
   @include transition($btn-transition);
-
   @include hover() {
     color: $body-color;
     text-decoration: none;
@@ -48,6 +54,9 @@
         @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
       }
     }
+    &.btn-shadow {
+      box-shadow: 0px 8px 15px rgba($primary, 0.3);
+    }
   }
 }
 
@@ -56,7 +65,6 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
-
 
 //
 // Alternate buttons
@@ -73,7 +81,6 @@ fieldset:disabled a.btn {
     @include button-outline-variant($value);
   }
 }
-
 
 //
 // Link buttons
@@ -104,19 +111,29 @@ fieldset:disabled a.btn {
   // No need for an active state here
 }
 
-
 //
 // Button Sizes
 //
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-line-height-lg,
+    $btn-border-radius-lg
+  );
 }
 
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-line-height-sm,
+    $btn-border-radius-sm
+  );
 }
-
 
 //
 // Block button
@@ -133,9 +150,9 @@ fieldset:disabled a.btn {
 }
 
 // Specificity overrides
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
   &.btn-block {
     width: 100%;
   }
