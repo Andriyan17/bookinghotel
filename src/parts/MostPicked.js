@@ -10,7 +10,7 @@ export default function MostPicked(props) {
           return (
             <div
               className={`item column-4${index === 0 ? ' row-2' : ' row-1'}`}>
-              <div className="card card-feature">
+              <div className="card card-featured">
                 <div className="tag">
                   ${item.price}
                   <span className="font-weight-light">per {item.unit}</span>
