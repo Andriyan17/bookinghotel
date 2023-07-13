@@ -156,6 +156,7 @@ section {
       z-index: 2;
       @include gradient-y(rgba($black, 0), rgba($black, 0.51), 0%, 100%);
     }
+
     .img-wrapper {
       z-index: 1;
       margin: 0;
