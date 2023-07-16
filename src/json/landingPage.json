@@ -121,7 +121,7 @@
           "imageUrl": "/images/image-category-7.jpg",
           "country": "South Korea",
           "city": "Seoul Flore",
-          "isPopular": false
+          "isPopular": true
         },
         {
           "_id": "asd1293uasdads1",
@@ -129,7 +129,7 @@
           "imageUrl": "/images/image-category-8.jpg",
           "country": "South Korea",
           "city": "Seoul Flore",
-          "isPopular": true
+          "isPopular": false
         }
       ]
     },
