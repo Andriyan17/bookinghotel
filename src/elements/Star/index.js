@@ -30,9 +30,30 @@ export default function Star({ value, height, width, spacing }) {
         }}></div>
     );
 
-  const starPlaceHolder 
+  const starPlaceHolder = [];
+  for (let index = 0; index < 5; ) {
+    starPlaceHolder.push(
+      <div
+        className="star placeholder"
+        key={`starPlaceHolder${index}`}
+        style={{
+          left: index * width,
+          width: width,
+          marginRight: spacing,
+        }}></div>
+    );
+  }
 
-  return <div>Star</div>;
+  return (
+    <>
+      <div
+        className={['stars', className].join(' ')}
+        style={{ height: height }}>
+        {starPlaceHolder}
+        {star}
+      </div>
+    </>
+  );
 }
 
 Star.propTypes = {
