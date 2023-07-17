@@ -1,19 +1,22 @@
-/* eslint-disable no-undef */
 import React from 'react';
+
 import propTypes from 'prop-types';
 
-export default function Star({ value, height, width, spacing }) {
+import './index.scss';
+export default function Star({ className, value, height, width, spacing }) {
   const decimals = Number(value) % 1;
+
   const star = [];
-  let letfPos = 0;
+  let leftPos = 0;
   for (let index = 0; index < 5 && index < value - decimals; index++) {
-    letfPos = letfPos * width;
+    leftPos = leftPos + width;
     star.push(
       <div
         className="star"
         key={`star-${index}`}
         style={{
           left: index * width,
+          height: height,
           width: width,
           marginRight: spacing,
         }}></div>
@@ -23,21 +26,23 @@ export default function Star({ value, height, width, spacing }) {
     star.push(
       <div
         className="star"
-        key={`star-${index}`}
+        key={`starWithDecimal`}
         style={{
-          left: letfPos,
-          width: width - spacing,
+          left: leftPos,
+          height: height,
+          width: decimals * width - spacing,
         }}></div>
     );
 
-  const starPlaceHolder = [];
-  for (let index = 0; index < 5; ) {
-    starPlaceHolder.push(
+  const starPlaceholder = [];
+  for (let index = 0; index < 5; index++) {
+    starPlaceholder.push(
       <div
         className="star placeholder"
-        key={`starPlaceHolder${index}`}
+        key={`starPlaceholder-${index}`}
         style={{
           left: index * width,
+          height: height,
           width: width,
           marginRight: spacing,
         }}></div>
@@ -49,7 +54,7 @@ export default function Star({ value, height, width, spacing }) {
       <div
         className={['stars', className].join(' ')}
         style={{ height: height }}>
-        {starPlaceHolder}
+        {starPlaceholder}
         {star}
       </div>
     </>
@@ -60,6 +65,6 @@ Star.propTypes = {
   className: propTypes.string,
   value: propTypes.number,
   width: propTypes.number,
-  spacing: propTypes.number,
   height: propTypes.number,
+  spacing: propTypes.number,
 };

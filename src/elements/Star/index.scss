@@ -1,0 +1,22 @@
+@import '../../assets/scss/colorVarible';
+
+.stars {
+  position: relative;
+  min-width: 200px;
+  display: inline-flex;
+
+  .star {
+    position: absolute;
+    z-index: 2;
+    display: inline-flex;
+    mask: url(../../assets/icons/star.svg) no-repeat center left;
+    &:not(.placeholder) {
+      z-index: 2;
+      background-color: $yellow;
+    }
+    &.placeholder {
+      z-index: 1;
+      background-color: $gray-200;
+    }
+  }
+}
