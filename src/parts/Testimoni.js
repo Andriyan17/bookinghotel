@@ -20,11 +20,11 @@ export default function Testimoni({ data }) {
               className="position-absolute"
               alt="TestimonialFrame"
               src={TestimonyAccent}
-              style={{ margin: `30px 0 0 30px`, zIndex: 1 }}
+              style={{ margin: `-30px 0 0 -30px` }}
             />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col">
           <h4 style={{ marginBottom: 40 }}>{data.name}</h4>
           <Star value={data.rate} height={35} width={35} spacing={4}></Star>
           <h5 className="h2 font-weight-light line-height-2 my-3">
@@ -37,7 +37,7 @@ export default function Testimoni({ data }) {
           <div>
             <Button
               className="btn px-5"
-              style={{ margintTop: 40 }}
+              style={{ marginTop: 40 }}
               hasShadow
               isPrimary
               type="link"
