@@ -26,6 +26,26 @@ export default function Number(props) {
     }
   };
 
+  const minus = () => {
+    value > min &&
+      onChange({
+        target: {
+          name: name,
+          value: +value - 1,
+        },
+      });
+  };
+
+  const plus = () => {
+    value < max &&
+      onChange({
+        target: {
+          name: name,
+          value: +value + 1,
+        },
+      });
+  };
+
   return <div></div>;
 }
 
